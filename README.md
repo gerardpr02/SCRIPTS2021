@@ -1,5 +1,6 @@
-# SCRIPTS2021
-## - GERARD PUJOL RUANO
-### - SCRIPTS D'M01 (SISTEMES OPERATIUS)
-### - BASH
-### - ESCOLA DEL TREBALL
+# M01 ISO Operatius
+## @edt Curs 2020-2021
+
+### Exercicis scripts
+
+**01-exemple.sh** primer exemple
