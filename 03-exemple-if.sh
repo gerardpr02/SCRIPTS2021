@@ -2,6 +2,7 @@
 # @edt Gerard Pujol ASIX-M01
 # Febrer 2021
 # Exemple if : Indica si és major d'edat
+# $ prog arg1
 # -------------------------------------------
 # 1) Validem arguments
 if [ $# -ne 1 ]

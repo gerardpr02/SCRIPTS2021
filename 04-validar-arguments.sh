@@ -3,6 +3,7 @@
 # Febrer 2021
 # Exemple if : Validar prog té exactament dos args i els mostra
 # si no dos args mostra error , usage i exit error
+# $ prog arg1 arg2
 # --------------------------------------------------------------
 # 1) Validem arguments
 if [ $# -ne 2 ]
