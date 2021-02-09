@@ -1,14 +1,20 @@
 #! /bin/bash
 # @edt Gerard Pujol ASIX-M01
 # Febrer 2021
-# Exemple if
- $ prog edat
+# Exemple if : Indica si és major d'edat
 # -------------------------------------------
-if [ $# -ne 1];
-	echo "Error: nºarguments incorrecte"
+# 1) Validem arguments
+if [ $# -ne 1 ]
+then
+	echo "Error: #arguments incorrecte"
 	echo "Usage: $0 edat"
 	exit 1
 fi
 
-echo $1
+#Xixa
+edat=$1
+if [ $edat -ge 18 ]
+then
+	echo "Edat $edat major d'edat"
+fi
 exit 0
