@@ -8,15 +8,12 @@
 if [ $# -ne 2 ]
 then
 	echo "Error: #arguments incorrecte"
-	echo "Usage: $0 argument1 argument2"
+	echo "Usage: $0 arg1 arg2"
 	exit 1
 fi
 
 #Xixa
 arg1=$1
 arg2=$2
-if [ $# -eq 2 ]
-then
-	echo "$1 $2"
-fi
+echo "Els arguments son: $arg1, $arg2"
 exit 0
