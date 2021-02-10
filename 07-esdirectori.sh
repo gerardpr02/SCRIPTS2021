@@ -1,9 +1,9 @@
 #! /bin/bash
 # @edt Gerard Pujol ASIX-M01
 # Febrer 2021
-# llistar directori
+# llistar directori si existeix
 #- validar rep un argument , validar que es directori, si es el llistem , si no error.
-#  $ prog arg
+#  $ prog dir
 # --------------------------------------------------------------
 ERR_NARGS=1
 ERR_DIR=2
