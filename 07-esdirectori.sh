@@ -6,7 +6,7 @@
 #  $ prog dir
 # --------------------------------------------------------------
 ERR_NARGS=1
-ERR_DIR=2
+ERR_NODIR=2
 # 1) Validem arguments
 if [ $# -ne 1 ]
 then
@@ -16,13 +16,14 @@ then
 fi
 
 # 2) Saber si es directori
-dir=$1
-if ! [ -d $dir ]; then
-  echo "ERROR: $dir no és un directori"
+mydir=$1
+if ! [ -d $mydir ]; 
+then
+  echo "Error: $mydir no és un directori"
   echo "Usage: $0 dir"
-  exit $ERR_DIR
+  exit $ERR_NODIR
 fi
 
 # Xixa
-ls $dir
+ls $mydir
 exit 0
