@@ -29,11 +29,15 @@ fi
 llista=$(ls $mydir)
 for fit in $llista
 do
-  if [ -f $fit ]
+  if [ -h $mydir/$fit ]; then 
+    echo "$fit és un symbolic link"
+  elif [ -f $mydir/$fit ]; 
   then
-    echo "$fit és un fitxer"
+    echo "$fit és un regular file "
+  elif [ -d $mydir/$fit ]; then
+    echo "$mydir/$fit és un directori"
   else
-    echo "$fit és una altre cosa"
+    echo "$fit és una altra cosa"
   fi
 done
 exit 0
