@@ -5,8 +5,13 @@
 # $prog
 # acció --> stdin retallant els primers 50 char
 #-----------------------------------------------------------------
+# CONSTANTS:
+OK=0
+
+# 1) XIXA:
 while read -r line
 do
-  echo "$line" | cut -c50
+  echo $line | cut -c1-50
 done
-exit 0
+
+exit $OK
