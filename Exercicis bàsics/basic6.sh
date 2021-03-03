@@ -19,17 +19,21 @@ then
 fi
 
 #Xixa
+laborables=0
+festius=0
 for dia in $* 
 do
   case $dia in
     "dilluns"|"dimarts"|"dimecres"|"dijous"|"divendres")
-       echo "El $dia és un dia laborable";;
+       ((laborable++));;
     "dissabte"|"diumenge")
-       echo "El $dia és un dia festiu";;
+       ((festius++));;
     *)
-	   echo "Error: l'argument \"$dia\" no és un dia de la setmana!" >> /dev/stderr
+	   echo "Error: l'argument \"$dia\" no és un dia de la setmana!" >> /dev/stderr;;
   esac
 done
+echo "Total de dies laborables: $laborables"
+echo "Total de dies festius: $festius"
 exit $OK
 
 
