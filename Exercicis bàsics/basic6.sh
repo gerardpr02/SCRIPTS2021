@@ -18,6 +18,7 @@ then
   exit $ERR_NARGS
 fi
 
+
 #Xixa
 laborables=0
 festius=0
