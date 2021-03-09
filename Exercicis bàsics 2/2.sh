@@ -10,7 +10,7 @@ num=0
 #Xixa
 for args in $*
 do
-	echo $args | egrep '.{3}' &> /dev/null
+	echo $args | egrep '.{3,}' &> /dev/null
 	if [ $? -eq 0 ]
 	then 
 		num=$((num+1))
