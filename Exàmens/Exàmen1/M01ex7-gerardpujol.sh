@@ -33,7 +33,7 @@ exis=0
 inexis=0
 for login in $*
 do
-  egrep "$login" /etc/passwd >> /dev/null
+  egrep "^$login:" /etc/passwd >> /dev/null
   if [ $? -eq 0 ]
   then
     echo "Login $login correcte"
