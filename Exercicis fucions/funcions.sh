@@ -1,6 +1,16 @@
 #! /bin/bash
 # Exercicis funcions
 
+#-d --> directori
+#-h --> enllaç simbòlic
+#-f --> regular file
+#-e --> Existeix
+#-c --> Dispositiu de caràcters
+#-b --> Dispositiu de blocs
+#-n --> string (no buit)
+#-z --> string (buit)
+
+
 #25- Processa una a una les línies del fitxer /etc/passwd i per a cada usuari mostra per
 #stdout el size del seu home.
 function getAllUserSize(){
