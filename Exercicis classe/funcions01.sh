@@ -30,10 +30,6 @@ function creaClasse(){
 }
 
 
-
-
-
-
 function showAllGroups(){
   MIN_USERS=2
   llista_gids=$(cut -d: -f4 /etc/passwd | sort -n | uniq)
