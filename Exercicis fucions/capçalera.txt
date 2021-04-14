@@ -1,0 +1,8 @@
+#! /bin/bash
+# @ edt Gerard Pujol ASIX-M01
+# Febrer 2021
+# Fer un programa que rep com a argument un número indicatiu del número màxim de línies a mostrar. 
+#El programa processa stdin línia a línia i mostra numerades un màxim de num línies.
+# $prog num
+#-----------------------------------------------------------------
+
