@@ -11,15 +11,15 @@ then
 fi
 
 
-llista_shell=$(cut -d: -f7 /etc/passwd | uniq)
+llista_shell=$(cut -d: -f7 /etc/passwd | sort | uniq)
 for shells in $llista_shell
 do
-  login=$(cut -d: -f1 /etc/passwd)
-  count=$(egrep "^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:$shells$" /etc/passwd | wc -l)
+  count=$(egrep ":$shells$" /etc/passwd | wc -l)
+  login=$(egrep ":$shells$" /etc/passwd | sort -k7,7 | cut -d: -f1 | sed -r 's/^(.*)$/\t\1/' )
   if [ $count -ge $MIN ]
   then
     echo "$shells($count)"
-    egrep ":$shells:$" /etc/passwd | cut -d: -f1 | sort -k7,7 | sed -r 's/^(.*)$/\t\1/'
-    egrep "^$login:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:$shells$" /etc/passwd | cut -d: -f1 | sort -k7,7 | sed -r 's/^(.*)$/\t\1/'
+    echo "$login"
+    #egrep ":$shells$" /etc/passwd | sort -k7,7 | cut -d: -f1 | sed -r 's/^(.*)$/\t\1/'
   fi
 done
