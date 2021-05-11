@@ -22,9 +22,9 @@ function fstype(){
 	fs=$1
 	echo -e "\nFsType: $type"
 	echo "Device:"
-	egrep -v "^#|^$" /etc/fstab  | tr -s '[:blank:]' ':' | egrep "^[^:]*:[^:]*:$fs:" | sort -k1 -t: | cut -d: -f1 | sed -r 's/^(.*)$/\t\1/'
+	egrep -v "^#|^$" /etc/fstab  | tr -s '[:blank:]' ':' | egrep "^[^:]*:[^:]*:$fs:" | sort -k1,1 -t: | cut -d: -f1 | sed -r 's/^(.*)$/\t\1/'
 	echo "MountPoint:"
-	egrep -v "^#|^$" /etc/fstab  | tr -s '[:blank:]' ':' | egrep "^[^:]*:[^:]*:$fs:" | sort -k1 -t: | cut -d: -f2 | sed -r 's/^(.*)$/\t\1/'
+	egrep -v "^#|^$" /etc/fstab  | tr -s '[:blank:]' ':' | egrep "^[^:]*:[^:]*:$fs:" | sort -k1,1 -t: | cut -d: -f2 | sed -r 's/^(.*)$/\t\1/'
 
 }
 	
