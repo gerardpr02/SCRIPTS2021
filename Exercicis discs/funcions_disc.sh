@@ -5,6 +5,27 @@
 #$ prog login
 #------------------------------------------------------------
 
+#11-LLista per a cada fstype que existeix al fstab (per ordre lexicogràfic)
+#les entrades d'quest tipus. Llistar tabuladament el device i el mountpoint.
+#Es rep un valor numèric d'argument que indica el numéro mínim d'entrades
+#d'aquest fstype que hi ha d'haver per sortir al llistat.
+
+function allfstypeif(){
+  llista_fstype=$(egrep -v "^#|^$" /etc/fstab  | tr -s '[:blank:]' ':' | cut -d: -f3)
+  llista_numerada=$(egrep -v "^#|^$" /etc/fstab  | tr -s '[:blank:]' ':' | cut -d: -f3 | wc -l)
+
+  MAX=0
+  if [ $# -eq 1 ] ; then
+    MAX=$1
+  fi
+
+  if [ $llista_numerada -ge $MAX ] ; then
+    for type in $llista_fstype
+    do
+      fstype $type 
+    done
+  fi 
+}
 
 #10-LLista per a cada fstype que existeix al fstab (per ordre lexicogràfic)
 #les entrades d'quest tipus. Llistar tabuladament el device i el mountpoint.
